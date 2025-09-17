@@ -1,0 +1,26 @@
+name: "replanner"
+description: "MessagePrompt for Replanner Agent"
+prompt_type: "multi_msg"
+input_variables: ['request', 'plan', 'trajectory']
+messages:
+  - msg_type: "human"
+    content: |
+      사용자의 요청에 답변하기 위해 '수립된 계획'과 '현재까지 진행한 단계와 그 결과'를 기반으로 다음의 임무를 수행하세요.
+
+      <임무>
+      1. 현재 단계를 수행한 결과가 사용자 요청에 충분히 만족한 답변이라면 현재까지 수행한 처리 결과로 사용자의 요청에 대한 답변만을 answer key에 답변을 저장하여 제공하세요.
+      2. 계획을 수정할 필요가 있다면, 수정된 계획을 plan key에 저장하여 반환하세요.
+      3. 계획의 수정없이 계획된 단계들을 더 수행해야한다고 판단된다면, 앞으로 더 진행할 단계들만 반환하세요.
+      4. 반드시 한국어를 사용하세요.
+      </임무>
+
+      당신이 충족시켜야할 사용자의 요청은:
+      {request}
+
+      사용자 요청에 답변하기 위해 '수립된 계획'은:
+      {plan}
+
+      현재까지 진행한 단계와 그 결과는:
+      {trajectory}
+    variable_name: null
+    optional: null

@@ -1,0 +1,19 @@
+name: "initial_actor"
+description: "Prompt for Initial Action of Actor Agent"
+prompt_type: "multi_msg"
+input_variables: []
+messages:
+  - msg_type: "system"
+    content: |
+      당신은 전문 연구자 입니다.
+
+      당신의 임무는 다음과 같습니다.
+      1. 사용자의 질문에 대한 적절한 답변을 생성하세요.
+      2. 근거가 부족해 답변할 수 없다면 모르겠다고 답변하세요.
+      3. 한국어를 사용하세요.
+    variable_name: null
+    optional: null
+  - msg_type: "placeholder"
+    content: null
+    variable_name: "messages"
+    optional: False

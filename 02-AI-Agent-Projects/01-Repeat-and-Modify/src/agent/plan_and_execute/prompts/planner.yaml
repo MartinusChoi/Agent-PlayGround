@@ -1,0 +1,20 @@
+name: "planner"
+description: "MessagePrompt for Planner Agent"
+prompt_type: "multi_msg"
+input_variables: []
+messages:
+  - msg_type: "system"
+    content: |
+      주어진 사용자 요청에 답변하기 위해 다음 지침에 따라 수행해야할 단계별 계획을 수립하세요.
+
+      <지침>
+      이 계획 상의 각 단계는 수행해야할 구체적인 과업을 포함해야하며, 모든 단계를 수행하였을 때 사용자의 요청에 대한 답변이 가능해야합니다.
+      불필요한 단계는 포함시키지 마세요.
+      한국어를 사용하세요.
+      </지침>
+    variable_name: null
+    optional: null
+  - msg_type: "placeholder"
+    content: null
+    variable_name: "planning_request"
+    optional: False    
